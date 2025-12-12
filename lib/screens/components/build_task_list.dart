@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/task_model.dart';
-import 'package:myapp/providers/task_provider.dart';
 
 // This widget builds the full list of tasks shown on the screen
 Widget buildTaskList(

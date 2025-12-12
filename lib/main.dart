@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:myapp/providers/task_provider.dart';
 
+// the main thing which runs firstly 
 void main() async {
   //initialize flutter widget bindings
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +15,7 @@ void main() async {
   //run the app
   runApp(MainApp());
 }
-
+// the main app window
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -22,7 +23,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => TaskProvider(),
-      child: MaterialApp(home: HomePage()),
+      child: MaterialApp(home: HomePage()), // start with the home page
     );
   }
 }

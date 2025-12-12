@@ -1,9 +1,5 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+// This is a basic Flutter widget test. It checks if a simple counter app works correctly.
+// The test uses WidgetTester to interact with the UI, like tapping buttons and reading text.
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -12,19 +8,19 @@ import 'package:myapp/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+    // Step 1: Build the app and render the first frame
     await tester.pumpWidget(const MainApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Step 2: Make sure the counter starts at 0
+    expect(find.text('0'), findsOneWidget); // Text '0' should appear once
+    expect(find.text('1'), findsNothing); // Text '1' should not exist yet
 
-    // Tap the '+' icon and trigger a frame.
+    // Step 3: Tap the + icon to increase the counter
     await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    await tester.pump(); // Updates the UI after the tap
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Step 4: Now the counter should show 1 instead of 0
+    expect(find.text('0'), findsNothing); // 0 should be gone
+    expect(find.text('1'), findsOneWidget); // 1 should now appear
   });
 }
