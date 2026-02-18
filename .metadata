@@ -22,12 +22,4 @@ migration:
       create_revision: 05db9689081f091050f01aed79f04dce0c750154
       base_revision: 05db9689081f091050f01aed79f04dce0c750154
 
-  # User provided section
-
-  # List of Local paths (relative to this file) that should be
-  # ignored by the migrate tool.
-  #
-  # Files that are not part of the templates will be ignored by default.
-  unmanaged_files:
-    - 'lib/main.dart'
-    - 'ios/Runner.xcodeproj/project.pbxproj'
+  
